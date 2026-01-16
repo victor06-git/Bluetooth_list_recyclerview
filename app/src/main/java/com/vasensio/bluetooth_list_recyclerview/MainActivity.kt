@@ -100,9 +100,7 @@ class MainActivity : AppCompatActivity() {
     private fun mostrarDialogo(dispositivo: Dispositivo) {
         AlertDialog.Builder(this)
             .setTitle(dispositivo.nombre)
-            .setMessage("MAC Address: ${dispositivo.mac}\n¿Conectar?")
-            .setPositiveButton("Sí", null)
-            .setNegativeButton("No", null)
+            .setMessage("MAC Address: ${dispositivo.mac}")
             .show()
     }
 }
