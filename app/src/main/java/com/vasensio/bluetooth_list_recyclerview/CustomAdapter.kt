@@ -1,5 +1,6 @@
 package com.vasensio.bluetooth_list_recyclerview
 
+import android.bluetooth.BluetoothDevice
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -7,8 +8,8 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 class CustomAdapter(
-    private val dataSet: MutableList<Dispositivo>,
-    private val onItemClick: (Dispositivo) -> Unit
+    private val dataSet: MutableList<BluetoothDevice>,
+    private val onItemClick: (BluetoothDevice) -> Unit
 ) : RecyclerView.Adapter<CustomAdapter.ViewHolder>() {
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -25,8 +26,8 @@ class CustomAdapter(
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
         val item = dataSet[position]
 
-        viewHolder.tvTitulo.text = item.nombre
-        viewHolder.tvMac.text = item.mac
+        viewHolder.tvTitulo.text = item.name
+        viewHolder.tvMac.text = item.address
 
         viewHolder.itemView.setOnClickListener {
             onItemClick(item)
