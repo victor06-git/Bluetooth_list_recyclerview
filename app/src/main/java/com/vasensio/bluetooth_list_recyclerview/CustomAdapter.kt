@@ -1,5 +1,6 @@
 package com.vasensio.bluetooth_list_recyclerview
 
+import android.annotation.SuppressLint
 import android.bluetooth.BluetoothDevice
 import android.view.LayoutInflater
 import android.view.View
@@ -23,6 +24,7 @@ class CustomAdapter(
         return ViewHolder(view)
     }
 
+    @SuppressLint("MissingPermission")
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
         val item = dataSet[position]
 
